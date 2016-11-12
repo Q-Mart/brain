@@ -1,3 +1,6 @@
 main :: IO()
 main = do input <- getLine
-          putStrLn input
+          putStrLn $ dispatch input
+
+dispatch :: String -> String
+dispatch x = foldr (\c acc -> c:'\n':acc) "" x
